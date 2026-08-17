@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Excercise12 from "./excercise/Excercise12";
+import Excercise13 from "./excercise/Excercise13";
+
 
 function App() {
+  const [page, setPage] = useState("home");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React hi
-        </a>
-      </header>
+    <div>
+      <button onClick={() => setPage("home")}>
+        Home
+      </button>
+
+      <button onClick={() => setPage("exercise12")}>
+        Exercise 12
+      </button>
+      <button onClick={() => setPage("exercise13")}>
+        Exercise 13
+      </button>
+      {page === "home" && (
+        <div>
+          <h1>Home Page</h1>
+          <p>Welcome to Home</p>
+        </div>
+      )}
+
+      {page === "exercise12" && (
+        <Excercise12 />
+      )}
+      {page === "exercise13" && (
+        <Excercise13 />
+      )}
     </div>
   );
 }
