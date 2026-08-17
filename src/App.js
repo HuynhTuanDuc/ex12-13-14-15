@@ -2,7 +2,7 @@ import { useState } from "react";
 import Excercise12 from "./excercise/Excercise12";
 import Excercise13 from "./excercise/Excercise13";
 import Excercise14 from "./excercise/Excercise14";
-
+import Excercise15 from "./excercise/Excercise15"
 
 function App() {
   const [page, setPage] = useState("home");
@@ -22,6 +22,9 @@ function App() {
       <button onClick={() => setPage("exercise14")}>
         Exercise 14
       </button>
+      <button onClick={() => setPage("exercise15")}>
+        Exercise 15
+      </button>
       {page === "home" && (
         <div>
           <h1>Home Page</h1>
@@ -37,6 +40,9 @@ function App() {
       )}
       {page === "exercise14" && (
         <Excercise14 />
+      )}
+      {page === "exercise15" && (
+        <Excercise15 />
       )}
     </div>
   );
